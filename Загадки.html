@@ -1,0 +1,44 @@
+<meta charset="utf-8">
+<script>
+
+    function check_words(answer, words) {
+        for (var i=0; i < words.length; i++){
+            if(answer == words[i]){
+                return true;
+                break;
+            }
+        }
+    }
+
+    var answer = prompt("Угадай загадку: Висит груша, но ее нельзя скушать"); // Загадываем загадку
+    var i = 0; //Количество угаданных загадок
+    words = ["лампочка", "лампа", "лампочка ильича"]
+    if(check_words(answer, words)){ //Сравниваем ответ с правильным
+        alert("Вы угадали. Игра окончена");
+    } else {
+        alert("Вы не угадали. Попробуйте отгадать еще 3 загадки");
+        answer = prompt("Без окон, без дверей, полна горница людей");
+        answer = answer.toLowerCase();
+        words = ["огурец", "огурчик"];
+        if(check_words(answer, words)){
+            alert("Вы угадали");
+            i++;// Увеличиваем i на единицу
+        }
+        answer = prompt("Серый и зубастый, воет в день ненастный.");
+        answer = answer.toLowerCase();
+        words = ["волк", "волчок", "волчонок", "серый волк"];
+        if(check_words(answer, words)){
+            alert("Вы угадали");
+            i++;
+        }
+        answer = prompt("Пришла из леса птичница в рыжей шубке, кур посчитать");
+        answer = answer.toLowerCase();
+        words = ["лиса", "лисичка", "лисёнок", "лисенок"];
+        if(check_words(answer, words)){
+            alert("Вы угадали");
+            i++;
+        }
+        alert("Вы угадали загадок " + i);
+    }
+    
+</script>
